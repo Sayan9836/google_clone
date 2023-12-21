@@ -1,0 +1,241 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #202124;
+  color: #bdc1c6;
+  height: 100vh;
+  word-break: break-all;
+}
+
+svg {
+  width: 24px;
+}
+
+header {
+  width: 100%;
+  padding: 1.25rem 0;
+}
+
+nav {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  margin-top: 9px;
+  align-items: center;
+}
+
+.google_logo {
+  width: 92px;
+  height: 30px;
+  aspect-ratio: auto 92 / 30;
+  margin: 0 2.7rem 0 2.2rem;
+}
+
+.input_wrapper {
+  position: relative;
+  width: max(45vw, 29rem);
+  display: flex;
+  align-items: center;
+  padding: 0.81rem 0 0.81rem 1.5rem;
+  border-radius: 28px;
+  margin-right: 1rem;
+  background-color: #323233;
+  border: 1px solid transparent;
+}
+
+.input_wrapper > input {
+  width: 75%;
+  outline: none;
+  border-style: none;
+  background: transparent;
+  color: white;
+  font-size: 16px;
+  margin-right: 0.3rem;
+}
+
+.input_wrapper > svg {
+  position: absolute;
+  margin-right: 0.5rem;
+  cursor: pointer;
+}
+
+.input_wrapper > .translator {
+  position: absolute;
+  width: 20px;
+  right: 8.3rem;
+  height: 11px;
+  color: grey;
+  cursor: pointer;
+}
+
+.input_wrapper > svg:nth-child(3) {
+  right: 5.5rem;
+}
+
+.input_wrapper > svg:nth-child(4) {
+  right: 3.1rem;
+}
+
+.input_wrapper > svg:last-child {
+  fill: rgb(79, 116, 227);
+  right: 0.7rem;
+}
+
+nav > ul {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  margin-right: 1.5rem;
+  list-style: none;
+  flex-grow: 1;
+  justify-content: flex-end;
+}
+
+li a {
+  text-decoration: none;
+  color: #e2e6eb;
+  font-size: 14px;
+}
+
+.profile svg {
+  width: unset;
+}
+.profile {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+.profile > a {
+  width: 100%;
+  height: 100%;
+}
+
+.profile > a > img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+a > svg {
+  fill: #e2e6eb;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  overflow-clip-margin: content-box;
+}
+
+/************************STYLING DYNAMIC CONTENT*******************************/
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.container p {
+  font-size: 0.875rem;
+}
+.about {
+  font-family: "Google Sans,Roboto,arial,sans-serif";
+  padding-top: 8px;
+  color: #bdc1c6;
+  margin-left: calc(5rem + 100px);
+}
+
+.list_wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.list_wrapper > * {
+  padding: 0.75rem;
+  width: max(45vw, 29rem);
+  margin-left: calc(5rem + 100px);
+  word-wrap: break-word;
+
+  line-height: 1.25;
+  letter-spacing: 0.5px;
+  word-spacing: 3px;
+}
+
+.display_link {
+  font-family: 400;
+  color: #bdc1c6;
+}
+
+.thumbnail_image {
+  width: 35px;
+  height: 15px;
+}
+
+.title_wrapper {
+  color: #8ab4f8;
+  text-decoration: none;
+}
+
+.title_wrapper:hover {
+  text-decoration: underline;
+}
+
+.title_heading {
+  color: "#c58af9";
+  font-weight: 400;
+  font-size: 1.5rem;
+  margin-top: 10px;
+}
+
+.snippet {
+  margin-top: 15px;
+  font-size: 0.875rem;
+  font-weight: normal;
+  color: #bdc1c6;
+}
+
+@media screen and (max-width: 668px) {
+  .list_wrapper > * {
+    margin-left: 3.5vw;
+    margin-right: 1vw;
+  }
+
+  .about {
+    margin-left: 3vw;
+  }
+
+  .google_logo {
+    margin-right: 0.5rem;
+    margin-left: 1rem;
+  }
+
+  .input_wrapper > input {
+    padding-right: 1rem;
+  }
+
+  .input_wrapper .translator {
+    display: none;
+  }
+
+  .input_wrapper > svg:nth-child(3) {
+    display: none;
+  }
+
+  .input_wrapper > svg:nth-child(4) {
+    display: none;
+  }
+
+  nav > ul > li:first-child {
+    display: none;
+  }
+
+  nav > ul > li:nth-child(2) {
+    display: none;
+  }
+}
