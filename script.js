@@ -1,10 +1,16 @@
 
+// Initialize variables
+
 let result = '';
 let searchInput = document.getElementById("searchInput").value;
 const main_wrapper = document.getElementsByTagName('main')[0];
 
+// Google Custom Search API credentials
+
 const API_KEY = 'AIzaSyCzbv0_5TvcTyy1Sr5AZ7DmHuVaZ8rDLrA'
 const SEARCH_ENGINE_ID = 'a3cddc2ed7f1e41e3';
+
+// Function to fetch data from Google Custom Search API
 
 const fetchData = async (URL) => {
 
@@ -24,6 +30,7 @@ const fetchData = async (URL) => {
 }
 
 
+// Event handler for key press (Enter) or search button click
 
 async function handleKeyPress(event) {
 
@@ -36,14 +43,23 @@ async function handleKeyPress(event) {
     if (event.keyCode === 13 || event === 'searchBtn') {
 
         try {
+
             result = await fetchData(URL)
-            localStorage.clear();
+
+            // add data to the local storage
             localStorage.setItem('data', JSON.stringify(result));
             localStorage.setItem('searchInput', JSON.stringify(searchInput));
+
+            // redirecting to the searchResultPage
             window.location.href = `searchResultPage.html`
+
         } catch (error) {
+
             localStorage.clear();
+
+            // showing alert on failed request
             window.alert('oops Internal server Error')
+
         }
 
 
@@ -52,6 +68,8 @@ async function handleKeyPress(event) {
 
 }
 
+
+// Function to display search results on the page
 
 const displaySearchResult = (result) => {
 
@@ -74,6 +92,7 @@ const displaySearchResult = (result) => {
         const wrapperDiv = document.createElement('div');
         wrapperDiv.className = 'wrapper'
 
+        // Create and append thumbnail image if available
         const thumbnailSrc = item?.pagemap?.cse_image?.length > 0 ? item.pagemap.cse_image[0].src : '';
         if (thumbnailSrc) {
             const thumbnailImg = document.createElement('img');
@@ -83,11 +102,15 @@ const displaySearchResult = (result) => {
             wrapperDiv.appendChild(thumbnailImg);
         }
 
+
+        // Create and append display link
         const displayLink = document.createElement('p');
         displayLink.className = 'display_link'
         displayLink.textContent = item?.displayLink;
         wrapperDiv.appendChild(displayLink);
 
+
+        // Create and append title link
         const titleLink = document.createElement('a');
         titleLink.href = item?.link;
         titleLink.className = 'title_wrapper';
@@ -99,6 +122,8 @@ const displaySearchResult = (result) => {
         titleLink.appendChild(titleHeading);
         wrapperDiv.appendChild(titleLink);
 
+
+        // Create and append snippet paragraph
         const snippetParagraph = document.createElement('p');
         snippetParagraph.textContent = item?.snippet;
         snippetParagraph.className = 'snippet';
@@ -115,15 +140,19 @@ const displaySearchResult = (result) => {
 
 
 
-
+// Event listener when DOM content is loaded or page is changed
 document.addEventListener('DOMContentLoaded', () => {
 
     let currHtmlPage = window.location.pathname;
 
     if (currHtmlPage === '/index.html') {
+
+        // Clear local storage on index.html page load
         localStorage.clear();
+
     }
 
+    // Retrieve data from local storage and display search result if available
     result = JSON.parse(localStorage.getItem('data'));
     searchInput = JSON.parse(localStorage.getItem('searchInput'))
     document.getElementById('searchInput').value = searchInput;

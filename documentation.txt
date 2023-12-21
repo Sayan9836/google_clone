@@ -1,0 +1,41 @@
+
+
+
+
+
+ ⁂  This Application is totally based on html css and javascript  No Framework is used
+
+
+FILE STRUCTURE ~~~~~~~>
+
+ homePage -> "index.html", 
+ resultsPage -> "searchResultPage.html",
+ single js file -> "script.js",
+ css files -> "index.css" and "searchResult.css" 
+
+
+ PROJECT DESCRIPTION ~~~~~~~>
+
+
+--> I have integrated the custom Google search API in this Application to fetch data  It has  ※ 100  request Limit per Day --> status code 429 if quota exceeds
+
+--> The homepage(index.html) is divided into three parts: header, main and footer (semantic HTML) -> ensures web assessability
+
+--> The main section contains the search field, which is used to search for anything the user wants
+
+--> When the user types into the search field with the help of the onKeydown event attribute it is listening to each keyPress so,
+
+--> When the user presses the enter key or clicks on the "Google search" button it calls the fetchData function which uses fetch API to get the required result
+
+--> Storing the result into the LocalStorage so that we do not lost it on Page change
+
+--> Then with the help of the location API of the browser it redirects to the "searchResultPage.html" page from the homePage "index.html"
+
+--> With the help of the event listener listening to page change (DOMContentLoaded) on page change getting data from LocalStorage and calling the displaySearchResult() function
+
+--> Then by iterating through the items array of result Object (that we get as a response from  API) render the first 10 items into the UI 
+
+
+WORK FLOW DIAGRAM ~~~~~~~>
+
+searchInputField(user typing) ====> handleKeyPress function ====> on pressing enterkey or clicking on the google search button ====> fetchData function ====> storing data into LocalStorage ====> redirecting to "searchResultPage.html" page ===> on page change ===> eventListner{ getting data from local Storage && calling displaySearchResult function } ====>  mapping through the results and displaying it into the UI (10 items)

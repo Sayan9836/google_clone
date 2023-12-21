@@ -3,11 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./index.css" />
     <title>Google Search Clone</title>
   </head>
 
   <body>
+    <!-- Header section containing navigation links -->
+
     <header>
       <nav>
         <ul>
@@ -18,6 +20,8 @@
           <li>
             <a href="#">Images</a>
           </li>
+
+          <!-- SVG icon for apps -->
 
           <li>
             <a style="display: inline-block; width: 24px; height: 24px" href="">
@@ -36,6 +40,8 @@
             </a>
           </li>
 
+          <!-- Profile image link -->
+
           <li class="profile">
             <a href="">
               <img
@@ -48,14 +54,22 @@
       </nav>
     </header>
 
+    <!-- Main content section -->
+
     <main>
+      <!-- Search container containing the Google logo and search input -->
+
       <div class="search-container">
+        <!-- Google logo -->
+
         <div class="logo">
           <img
             src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_light_color_272x92dp.png"
             alt=""
           />
         </div>
+
+        <!-- Search input and icons -->
 
         <div class="input_wrapper">
           <svg
@@ -123,6 +137,8 @@
           </svg>
         </div>
 
+        <!-- Buttons for Google Search and I'm Feeling Lucky -->
+
         <div class="box_wrapper">
           <div>
             <a onclick="handleKeyPress('searchBtn')">Google Search</a>
@@ -148,6 +164,8 @@
         </p>
       </div>
     </main>
+
+    <!-- Footer section -->
 
     <footer>
       <div class="footer_top">
