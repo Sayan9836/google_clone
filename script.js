@@ -7,22 +7,15 @@ const main_wrapper = document.getElementsByTagName('main')[0];
 
 // Google Custom Search API credentials
 
-const API_KEY = 'AIzaSyCzbv0_5TvcTyy1Sr5AZ7DmHuVaZ8rDLrA'
+const API_KEY = 'AIzaSyCzgnwoja8emMcKNjGoOSDu8wKy75Z8fQI'
 const SEARCH_ENGINE_ID = 'a3cddc2ed7f1e41e3';
 
 // Function to fetch data from Google Custom Search API
 
 const fetchData = async (URL) => {
 
-    try {
-
-        let data = await fetch(URL);
-        data = await data.json();
-
-    } catch (error) {
-        window.alert('oops error while processing')
-        console.log("hello");
-    }
+    let data = await fetch(URL);
+    data = await data.json();
 
     return data;
 
@@ -143,9 +136,10 @@ const displaySearchResult = (result) => {
 // Event listener when DOM content is loaded or page is changed
 document.addEventListener('DOMContentLoaded', () => {
 
-    let currHtmlPage = window.location.pathname;
 
-    if (currHtmlPage === '/index.html') {
+    let currHtmlPage = window.location.pathname; // to identify the current page
+
+    if (currHtmlPage === '/') {
 
         // Clear local storage on index.html page load
         localStorage.clear();
