@@ -200,14 +200,10 @@ img {
 }
 
 @media screen and (max-width: 668px) {
-  .list_wrapper {
-    width: 98vw;
-    word-wrap: break-word;
-  }
-
   .list_wrapper > * {
     margin-left: 3.5vw;
     word-break: break-all;
+    width: 95vw;
   }
 
   .about {
