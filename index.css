@@ -90,10 +90,9 @@ a > svg {
 }
 
 .input_wrapper:hover {
-  background: linear-gradient(#202124, rgb(55, 54, 54), rgb(73, 72, 72));
-  box-shadow: 2px 2px 5px #1d1d1d 2px 2px 5px #1d1d1d 2px 2px 5px #1d1d1d 2px
-    2px 5px #1d1d1d;
-  z-index: 10;
+  background: #303134;
+  box-shadow: 0 1px 6px 0 #171717;
+  border-color: rgba(223, 225, 229, 0);
 }
 
 .input_wrapper > svg:nth-child(1) {

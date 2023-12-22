@@ -9,7 +9,6 @@ body {
   background-color: #202124;
   color: #bdc1c6;
   height: 100vh;
-  word-break: break-all;
 }
 
 svg {
@@ -161,7 +160,7 @@ img {
   width: max(45vw, 29rem);
   margin-left: calc(5rem + 100px);
   word-wrap: break-word;
-
+  word-break: break-all;
   line-height: 1.25;
   letter-spacing: 0.5px;
   word-spacing: 3px;
@@ -201,9 +200,14 @@ img {
 }
 
 @media screen and (max-width: 668px) {
+  .list_wrapper {
+    width: 98vw;
+    word-wrap: break-word;
+  }
+
   .list_wrapper > * {
     margin-left: 3.5vw;
-    margin-right: 1vw;
+    word-break: break-all;
   }
 
   .about {
